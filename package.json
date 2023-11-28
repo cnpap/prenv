@@ -1,0 +1,49 @@
+{
+  "name": "ts-lib-start",
+  "version": "1.0.0",
+  "description": "ts lib 起步样板",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "ec": "dist/cli.js"
+  },
+  "scripts": {
+    "test": "vitest",
+    "lint": "eslint . --ext .ts",
+    "prettier": "prettier --write ./**/*.{ts,tsx}",
+    "build:clean": "rimraf dist",
+    "build:tsc": "tsc --emitDeclarationOnly --project tsconfig.build.json",
+    "build:esbuild": "tsx scripts/build.mts",
+    "build": "npm run build:clean && npm run build:tsc && npm run build:esbuild"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sia-fl/ts-lib-start"
+  },
+  "keywords": [
+    "ts",
+    "lib",
+    "start"
+  ],
+  "author": "杨伟杰 <sia-fl@outlook.com> (https://github.com/sia-fl)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "esbuild": "^0.19.8",
+    "eslint": "^8.54.0",
+    "globby": "^14.0.0",
+    "prettier": "^3.1.0",
+    "rimraf": "^5.0.5",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.2",
+    "vitest": "^0.34.6"
+  }
+}
