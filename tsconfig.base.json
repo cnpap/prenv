@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "lib": ["es2023", "dom"],
-    "module": "nodenext",
+    "module": "esnext",
     "target": "es2022",
-    "moduleResolution": "nodenext",
+    "moduleResolution": "node",
 
     "outDir": "dist",
 
