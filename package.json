@@ -1,19 +1,21 @@
 {
-  "name": "ts-lib-start",
+  "name": "prenv",
   "version": "1.0.0",
-  "description": "ts lib 起步样板",
+  "description": "在启动前设置具名环境变量 & 生成环境变量类型到 .d.ts",
   "main": "dist/index.js",
+  "type": "module",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "bin": {
-    "ec": "dist/cli.js"
+    "prenv": "dist/prenv.js",
+    "prenv-type": "dist/prenv-type.js"
   },
   "scripts": {
     "test": "vitest",
     "lint": "eslint . --ext .ts",
-    "prettier": "prettier --write ./**/*.{ts,tsx}",
+    "prettier": "prettier --write ./**/*.{ts,tsx,json}",
     "build:clean": "rimraf dist",
     "build:tsc": "tsc --emitDeclarationOnly --project tsconfig.build.json",
     "build:esbuild": "tsx scripts/build.mts",
@@ -24,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sia-fl/ts-lib-start"
+    "url": "https://github.com/sia-fl/prenv"
   },
   "keywords": [
     "ts",
@@ -34,6 +36,7 @@
   "author": "杨伟杰 <sia-fl@outlook.com> (https://github.com/sia-fl)",
   "license": "MIT",
   "devDependencies": {
+    "@types/minimist": "^1.2.5",
     "@types/node": "^20.10.0",
     "@typescript-eslint/eslint-plugin": "^6.13.1",
     "@typescript-eslint/parser": "^6.13.1",
@@ -45,5 +48,9 @@
     "tsx": "^4.6.0",
     "typescript": "^5.3.2",
     "vitest": "^0.34.6"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "minimist": "^1.2.8"
   }
 }
