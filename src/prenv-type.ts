@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { getArgs, getEnvValues } from './parse';
 import * as fs from 'fs';
 import path from 'node:path';
