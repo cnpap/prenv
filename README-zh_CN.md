@@ -1,11 +1,11 @@
-English | [中文](./README-zh_CN.md)
+[English](./README.md) | 中文
 
-## ✨ Feature List
+## ✨ 功能清单
 
-- ❄️ generate the `env.d.ts` file for environment variables into a specified directory
-- 💥 initialize environment variables at startup
+- ❄️ 将环境变量 env.d.ts 文件生成到指定目录
+- 💥 启动时初始化环境环境变量
 
-## 📦 Installation
+## 📦 安装
 
 ```bash
 npm install prenv
@@ -19,19 +19,19 @@ yarn add prenv
 pnpm add prenv
 ```
 
-## 💫 Generate the `env.d.ts` File for Environment Variables into a Specified Directory
+## 💫 将环境变量 env.d.ts 文件生成到指定目录
 
 ```
-Usage:
+使用方法:
 
 prenv-type --dir . --output ./types
 
-// or generate to some workspace app
+// 或者生成到某个工作区应用
 
 prenv-type --dir ./workspace/some-app --output ./workspace/some-app/types
 ```
 
-using in package.json
+在 package.json 中使用
 
 ```json
 {
@@ -41,27 +41,27 @@ using in package.json
 }
 ```
 
-## 💫 Initialize Environment Variables at Startup
+## 💫 启动时初始化环境环境变量
 
 ```
-Usage: 
+使用方法: 
 
 prenv --dir . --name developer commands
 
-// using for vitest
+// 在使用 vitest 时
 
 prenv --dir . --name developer vitest
 
-// using for some node app
+// 在使用 node 应用时
 
 prenv --dir . --name developer node your-app.js
 
-// using for vite
+// 在使用 vite 时
 
 prenv --dir . --name developer vite build
 ```
 
-using in package.json
+在 package.json 中使用
 
 ```json
 {
