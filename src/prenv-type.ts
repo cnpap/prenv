@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { getArgs, getEnvValues } from './parse';
+import { getArgs, getEnvValues } from './parse.js';
 import * as fs from 'fs';
 import path from 'node:path';
 
