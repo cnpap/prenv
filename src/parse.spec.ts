@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getNamedEnvValues, getEnvValues } from './parse';
+import { getNamedEnvValues, getEnvValues } from './parse.js';
 import path from 'node:path';
 
 describe('parse', () => {
