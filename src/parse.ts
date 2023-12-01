@@ -3,12 +3,22 @@ import dotenv from 'dotenv';
 import * as fs from 'fs';
 import minimist from 'minimist';
 
+const nameAlias: Record<string, string> = {
+  d: 'development',
+  dev: 'development',
+  t: 'test',
+  test: 'test',
+  p: 'production',
+  prod: 'production'
+};
+
 export const getArgs = () => {
   const args = minimist(process.argv.slice(2));
-  const dir = args.dir as string;
-  const name = args.name as string;
+  const dir = (args.dir as string) || '.';
+  let name = (args.name as string) || 'd';
+  name = nameAlias[name] || name;
   const commands = args._ as string[];
-  const output = args.output as string;
+  const output = (args.output as string) || '.';
 
   return {
     dir,

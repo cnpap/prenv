@@ -72,3 +72,18 @@ using in package.json
   }
 }
 ```
+
+| Name | Alias         |
+|------|---------------|
+| d    | development   |
+|dev   | development   |
+| t    | test          |
+| p    | production    |
+|prod  | production    |
+
+| Params   | Default     |
+|----------|-------------|
+| --dir    | .           |
+| --name   | development |
+| --output | .           |
+

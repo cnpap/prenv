@@ -72,3 +72,21 @@ prenv --dir . --name developer vite build
   }
 }
 ```
+
+## 📖 命令行参数简化
+
+| Name | Alias         |
+|------|---------------|
+| d    | development   |
+|dev   | development   |
+| t    | test          |
+| p    | production    |
+|prod  | production    |
+
+| Params   | Default     |
+|----------|-------------|
+| --dir    | .           |
+| --name   | development |
+| --output | .           |
+
+现在你可以使用 `prenv d vitest` 甚至 `prenv vitest` 来启动你的 vitest 应用了
