@@ -1,6 +1,6 @@
 {
   "name": "prenv",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "在启动前设置具名环境变量 & 生成环境变量类型到 .d.ts",
   "main": "dist/index.js",
   "type": "module",
