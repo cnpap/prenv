@@ -24,11 +24,11 @@ pnpm add prenv
 ```
 使用方法:
 
-prenv-type --dir . --output ./types
+prenv-type --prenv-dir . --prenv-output ./types
 
 // 或者生成到某个工作区应用
 
-prenv-type --dir ./workspace/some-app --output ./workspace/some-app/types
+prenv-type --prenv-dir ./workspace/some-app --prenv-output ./workspace/some-app/types
 ```
 
 在 package.json 中使用
@@ -36,7 +36,7 @@ prenv-type --dir ./workspace/some-app --output ./workspace/some-app/types
 ```json
 {
   "scripts": {
-    "test": "prenv-type --dir . --output ./types"
+    "test": "prenv-type --prenv-dir . --prenv-output ./types"
   }
 }
 ```
@@ -46,19 +46,19 @@ prenv-type --dir ./workspace/some-app --output ./workspace/some-app/types
 ```
 使用方法: 
 
-prenv --dir . --name developer commands
+prenv --prenv-dir . --prenv-name developer commands
 
 // 在使用 vitest 时
 
-prenv --dir . --name developer vitest
+prenv --prenv-dir . --prenv-name developer vitest
 
 // 在使用 node 应用时
 
-prenv --dir . --name developer node your-app.js
+prenv --prenv-dir . --prenv-name developer node your-app.js
 
 // 在使用 vite 时
 
-prenv --dir . --name developer vite build
+prenv --prenv-dir . --prenv-name developer vite build
 ```
 
 在 package.json 中使用
@@ -66,9 +66,9 @@ prenv --dir . --name developer vite build
 ```json
 {
   "scripts": {
-    "test": "prenv --dir . --name developer vitest",
-    "build": "prenv --dir . --name developer vite build",
-    "start": "prenv --dir . --name developer node your-app.js"
+    "test": "prenv --prenv-dir . --prenv-name developer vitest",
+    "build": "prenv --prenv-dir . --prenv-name developer vite build",
+    "start": "prenv --prenv-dir . --prenv-name developer node your-app.js"
   }
 }
 ```
@@ -78,15 +78,15 @@ prenv --dir . --name developer vite build
 | Name | Alias         |
 |------|---------------|
 | d    | development   |
-|dev   | development   |
+| dev  | development   |
 | t    | test          |
 | p    | production    |
-|prod  | production    |
+| prod | production    |
 
-| Params   | Default     |
-|----------|-------------|
-| --dir    | .           |
-| --name   | development |
-| --output | .           |
+| Params         | Default |
+|----------------|---------|
+| --prenv-dir    | .       |
+| --prenv-name   | d       |
+| --prenv-output | .       |
 
 现在你可以使用 `prenv d vitest` 甚至 `prenv vitest` 来启动你的 vitest 应用了

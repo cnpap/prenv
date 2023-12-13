@@ -24,11 +24,11 @@ pnpm add prenv
 ```
 Usage:
 
-prenv-type --dir . --output ./types
+prenv-type --prenv-dir . --prenv-output ./types
 
 // or generate to some workspace app
 
-prenv-type --dir ./workspace/some-app --output ./workspace/some-app/types
+prenv-type --prenv-dir ./workspace/some-app --prenv-output ./workspace/some-app/types
 ```
 
 using in package.json
@@ -36,7 +36,7 @@ using in package.json
 ```json
 {
   "scripts": {
-    "test": "prenv-type --dir . --output ./types"
+    "test": "prenv-type --prenv-dir . --prenv-output ./types"
   }
 }
 ```
@@ -46,19 +46,19 @@ using in package.json
 ```
 Usage: 
 
-prenv --dir . --name developer commands
+prenv --prenv-dir . --prenv-name developer commands
 
 // using for vitest
 
-prenv --dir . --name developer vitest
+prenv --prenv-dir . --prenv-name developer vitest
 
 // using for some node app
 
-prenv --dir . --name developer node your-app.js
+prenv --prenv-dir . --prenv-name developer node your-app.js
 
 // using for vite
 
-prenv --dir . --name developer vite build
+prenv --prenv-dir . --prenv-name developer vite build
 ```
 
 using in package.json
@@ -66,9 +66,9 @@ using in package.json
 ```json
 {
   "scripts": {
-    "test": "prenv --dir . --name developer vitest",
-    "build": "prenv --dir . --name developer vite build",
-    "start": "prenv --dir . --name developer node your-app.js"
+    "test": "prenv --prenv-dir . --prenv-name developer vitest",
+    "build": "prenv --prenv-dir . --prenv-name developer vite build",
+    "start": "prenv --prenv-dir . --prenv-name developer node your-app.js"
   }
 }
 ```
@@ -81,9 +81,9 @@ using in package.json
 | p    | production    |
 |prod  | production    |
 
-| Params   | Default     |
-|----------|-------------|
-| --dir    | .           |
-| --name   | development |
-| --output | .           |
+| v2 Params      | Default     |
+|----------------|-------------|
+| --prenv-dir    | .           |
+| --prenv-name   | development |
+| --prenv-output | .           |
 

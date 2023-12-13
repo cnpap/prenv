@@ -14,17 +14,26 @@ const nameAlias: Record<string, string> = {
 
 export const getArgs = () => {
   const args = minimist(process.argv.slice(2));
-  const dir = (args.dir as string) || '.';
-  let name = (args.name as string) || 'd';
-  name = nameAlias[name] || name;
-  const commands = args._ as string[];
-  const output = (args.output as string) || '.';
+  const dir = (args['prenv-dir'] as string) || '.';
+  const name = (args['prenv-name'] as string) || 'd';
+  const output = (args['prenv-output'] as string) || '.';
+  let commands = process.argv.slice(2);
+
+  const is: number[] = [];
+  for (const [i, command] of commands.entries()) {
+    if (['--prenv-dir', '--prenv-name', '--prenv-output'].includes(command)) {
+      is.push(i);
+      is.push(i + 1);
+    }
+  }
+  commands = commands.filter((_, i) => !is.includes(i)).filter(item => !item.startsWith('--prenv'));
 
   return {
+    args,
     dir,
-    name,
-    commands: commands.join(' '),
-    output
+    output,
+    name: nameAlias[name] || name,
+    commands: commands.join(' ')
   };
 };
 
